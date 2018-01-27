@@ -1,0 +1,20 @@
+<body>
+	<div class="row">
+<h3 class="col s6 offset-s3 card-title">List of Opinions from all Users </h3>
+</div>
+<% @users.each do |user| %>
+    <% user.posts.each do |post|  %> 
+      <div class="row">
+        <div class="card blue-grey darken-1 col s6 offset-s3">
+  	  <a class="card-content white-text   "> <%= post.opinion %> </a>
+        </div>
+      </div>
+    <%end%>
+  <% end %>
+  <div class="row center">
+	  <h1 class="col s12">For some reason you want say your opinion about us?</h1>
+  </div>
+  <div class="row center">
+    <%= link_to "Your Opinion", user_new_path, class: "btn-large col s4 offset-s4" %>
+   </div>
+</body>
